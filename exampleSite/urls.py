@@ -17,6 +17,9 @@ from django.conf.urls import url
 from django.contrib import admin
 from assignment.views import user_profile
 
+# url(r'^user_profile/(?P<usn>\w{0,50})/$', user_profile)
+# Takes parameter in URL sending to user_profile Function
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^user_profile/$', user_profile),

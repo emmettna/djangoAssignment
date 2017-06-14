@@ -1,0 +1,20 @@
+{% if User %}
+    <ul>
+        {% for user in User %}
+            {% for user_resource in User_resource %}
+                <li>{usn : {{user.usn}}, username : {{user.username}}, token : {{user.token}},
+                        trophy : {{user_resource.trophy}}, team_list :[
+
+                        {{User_team}}
+
+                        {% for user_team in User_team %}
+                            {{user_team.team_id}}
+                        {% endfor %}]
+                    }</li>
+
+            {% endfor %}
+        {% endfor %}
+    </ul>
+{% else %}
+    <p> No Data Here</p>
+{% endif %}
