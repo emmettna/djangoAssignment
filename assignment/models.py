@@ -18,7 +18,7 @@ class User(models.Model):
 
 
 class User_resource(models.Model):
-    usn = models.ForeignKey('assignment.User')
+    usn = models.ForeignKey('assignment.User', on_delete=models.CASCADE)
 
     trophy = models.IntegerField()
 
@@ -27,7 +27,7 @@ class User_resource(models.Model):
 
 
 class User_team(models.Model):
-    usn = models.ForeignKey('assignment.User')
+    usn = models.ForeignKey('assignment.User', on_delete=models.CASCADE)
 
     team_id = models.IntegerField()
 
