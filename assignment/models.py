@@ -2,6 +2,7 @@
 
 from django.db import models
 from django.utils import timezone
+from datetime import datetime
 import json
 
 
@@ -34,3 +35,15 @@ class User_team(models.Model):
 
     def __int__(self):
         return self.team_id
+
+
+class Match_list(models.Model):
+    match_id = models.IntegerField()
+
+    home_team = models.ForeignKey(User_team,related_name='home')
+
+    away_team = models.ForeignKey(User_team, related_name='away')
+
+    match_date = models.DateField()
+
+    match_time = models.TimeField()
