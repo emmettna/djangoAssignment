@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b63bd994-4d7e-4bb4-ae38-66c2cf3ed050" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment/migrations/0002_auto_20170613_1850.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment/migrations/0003_auto_20170613_2048.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment/migrations/0004_auto_20170617_0438.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment/__init__.py" afterPath="$PROJECT_DIR$/assignment/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment/admin.py" afterPath="$PROJECT_DIR$/assignment/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment/apps.py" afterPath="$PROJECT_DIR$/assignment/apps.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment/migrations/__init__.py" afterPath="$PROJECT_DIR$/assignment/migrations/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment/models.py" afterPath="$PROJECT_DIR$/assignment/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment/templates/user_profile.html" afterPath="$PROJECT_DIR$/assignment/templates/user_profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment/tests.py" afterPath="$PROJECT_DIR$/assignment/tests.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment/views.py" afterPath="$PROJECT_DIR$/assignment/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exampleSite/__init__.py" afterPath="$PROJECT_DIR$/exampleSite/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exampleSite/settings.py" afterPath="$PROJECT_DIR$/exampleSite/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exampleSite/urls.py" afterPath="$PROJECT_DIR$/exampleSite/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exampleSite/wsgi.py" afterPath="$PROJECT_DIR$/exampleSite/wsgi.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,8 +41,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignment/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7">
-              <caret line="96" column="21" lean-forward="true" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
+            <state relative-caret-position="119">
+              <caret line="95" column="40" lean-forward="true" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="40" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -81,8 +65,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assignment/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="47" column="29" lean-forward="true" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+            <state relative-caret-position="74">
+              <caret line="37" column="71" lean-forward="false" selection-start-line="37" selection-start-column="71" selection-end-line="37" selection-end-column="71" />
               <folding>
                 <element signature="e#25#53#0" expanded="true" />
               </folding>
@@ -128,20 +112,20 @@
         <option value="$PROJECT_DIR$/assignment/migrations/0002_auto_20170618_0520.py" />
         <option value="$PROJECT_DIR$/assignment/migrations/0001_initial.py" />
         <option value="$PROJECT_DIR$/db.sqlite3" />
-        <option value="$PROJECT_DIR$/assignment/admin.py" />
         <option value="$PROJECT_DIR$/assignment/migrations/0006_auto_20170618_0554.py" />
-        <option value="$PROJECT_DIR$/assignment/views.py" />
         <option value="$PROJECT_DIR$/exampleSite/urls.py" />
         <option value="$PROJECT_DIR$/assignment/migrations/0008_auto_20170618_0631.py" />
+        <option value="$PROJECT_DIR$/assignment/admin.py" />
         <option value="$PROJECT_DIR$/assignment/models.py" />
+        <option value="$PROJECT_DIR$/assignment/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="570" />
-    <option name="y" value="124" />
-    <option name="width" value="1400" />
-    <option name="height" value="770" />
+    <option name="x" value="452" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="807" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -325,10 +309,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="570" y="124" width="1400" height="770" extended-state="0" />
+    <frame x="452" y="23" width="1440" height="807" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16785714" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16319445" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -657,6 +641,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assignment/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="95" column="40" lean-forward="true" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="40" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assignment/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -667,20 +661,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignment/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7">
-          <caret line="96" column="21" lean-forward="true" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignment/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="47" column="29" lean-forward="true" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+        <state relative-caret-position="74">
+          <caret line="37" column="71" lean-forward="false" selection-start-line="37" selection-start-column="71" selection-end-line="37" selection-end-column="71" />
           <folding>
             <element signature="e#25#53#0" expanded="true" />
           </folding>

@@ -46,7 +46,7 @@ class User_team(models.Model):
         return self.usn
 
 class Team_list(models.Model):
-    team_id = models.IntegerField(primary_key=True)
+    team_id = models.IntegerField(primary_key=True, unique=True)
 
     team_name = models.CharField(max_length=20)
 

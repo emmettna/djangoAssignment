@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from assignment.models import User, User_team, User_resource, Match_list
+from assignment.models import User, User_team, User_resource, Match_list, Team_list
 from django.http import HttpResponse
 from django.template import loader
+from django.core import serializers
+from django.forms.models import model_to_dict
 import json
 from django.shortcuts import render
 
@@ -67,34 +69,32 @@ def user_profile(request, usn=1):
 
     return HttpResponse(JSon_Object, content_type="application/json")
 
-
     # Take usn as a parameter then get user details which team the user likes
     # Then it searches both home and away team match
     # Finally wrap the details and return json object
 
 def match_list(request, usn=1):
 
-    queryset = User_team.objects.filter(usn=usn)
+    queryset = User_team.objects.filter(usn=usn).values('team_id').distinct()
 
     team_Id = []
+    for e in queryset:
+        team_Id.append(e)
 
     # Get data from user_team and put it in team_id list
-
-    for e in queryset:
-        team_Id.append(e.team_id)
+    # for e in queryset:
+    #      team_Id.append(e.team_id)
 
     print(team_Id)
 
     # Match the team ids with match list. if it matches either home or away or both
     # Then it returns.
-    # Issue #1 Home_team_id is not being matched with integer cuz it's an object not integer
-    #  - one solution for this is making a new model for teams so it can take int parameter
+    # Issue #1 user_team model has three rows [id, team_id_id, usn_id] and when it filters,
+    # it filters by id not by team_id_id.
 
-    queryset2 = Match_list.objects.filter(home_team_id__in=team_Id)
-    queryset4 = Match_list.objects.filter(home_team_id__in=[1,2])
+    queryset4 = Match_list.objects.get(home_team_id=5)
     queryset3 = Match_list.objects.all()
-
-    dummy_Home_Id = 1
+    print('home team' , queryset4)
 
     match_id = ''
     home_team_id = ''
@@ -102,32 +102,36 @@ def match_list(request, usn=1):
     match_date = ''
     match_time = ''
 
-
-    dummy_Query = Match_list.objects.filter(home_team_id=dummy_Home_Id)
-
     for e in queryset3:
         match_id = e.match_id
-        home_team_id = dummy_Home_Id
-        away_team_id = e.away_team_id
-        match_date = e.match_date
-        match_time = e.match_time
+        print(match_id)
+
+        # Made the object dictated. I guess when it has multiple values, it can't be JSon serialized
+        # For testing purpose, the function is loading all the function is loading just one value,
+        # it may be fine.
+
+        home_team_id = model_to_dict(e.home_team.team_id).get('team_id','')
+        print(home_team_id)
+        # home team id is an object of teamlist. While it just needs to print team_id, it's printing entire row.
+        away_team_id = model_to_dict(e.away_team.team_id).get('team_id','')
+
+        # Made the date object a String
+
+        match_date = e.match_date.isoformat()
+        match_time = e.match_time.isoformat()
 
     matchListDictation = {
         'match_id' : match_id,
         'home_team_id' : home_team_id,
         'away_team_id' : away_team_id,
-
-        # Issue #2 Date and time can't be serializable
-
-        # 'match_date' : match_date,
-        # 'match_time' : match_time
+        'match_date' : match_date,
+        'match_time' : match_time
     }
-
-
+    print(matchListDictation)
 
     object_Dictation_Processed = {'usn' : usn,
-                        'match_list' : matchListDictation
-                        }
+                                  'match_list' : matchListDictation
+                                 }
     JSon_Object = json.dumps(object_Dictation_Processed)
 
     return HttpResponse(JSon_Object,content_type="application/json")
