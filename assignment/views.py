@@ -19,7 +19,7 @@ def user_profile(request, usn=1):
 
     #Version1 sending via user_profile.html
 
-    # anotherqueryset = User.objects.filter(usn=usn)
+    # anotherqueryset = User.objects.filter(usn=usn
     # anotherqueryset2 = User_team.objects.filter(usn=usn)
     # anotherqueryset3 = User_resource.objects.filter(usn=usn)
     #
@@ -83,21 +83,51 @@ def match_list(request, usn=1):
     for e in queryset:
         team_Id.append(e.team_id)
 
+    print(team_Id)
+
     # Match the team ids with match list. if it matches either home or away or both
     # Then it returns.
-    # issue
-    # #1 home_team_id is not being matched with integer cuz it's an object not integer
+    # Issue #1 Home_team_id is not being matched with integer cuz it's an object not integer
+    #  - one solution for this is making a new model for teams so it can take int parameter
 
     queryset2 = Match_list.objects.filter(home_team_id__in=team_Id)
+    queryset4 = Match_list.objects.filter(home_team_id__in=[1,2])
     queryset3 = Match_list.objects.all()
 
-    print(queryset2)
+    dummy_Home_Id = 1
 
+    match_id = ''
+    home_team_id = ''
+    away_team_id = ''
+    match_date = ''
+    match_time = ''
+
+
+    dummy_Query = Match_list.objects.filter(home_team_id=dummy_Home_Id)
+
+    for e in queryset3:
+        match_id = e.match_id
+        home_team_id = dummy_Home_Id
+        away_team_id = e.away_team_id
+        match_date = e.match_date
+        match_time = e.match_time
+
+    matchListDictation = {
+        'match_id' : match_id,
+        'home_team_id' : home_team_id,
+        'away_team_id' : away_team_id,
+
+        # Issue #2 Date and time can't be serializable
+
+        # 'match_date' : match_date,
+        # 'match_time' : match_time
+    }
 
 
 
     object_Dictation_Processed = {'usn' : usn,
-                        'match_list' : match_list
+                        'match_list' : matchListDictation
                         }
+    JSon_Object = json.dumps(object_Dictation_Processed)
 
-    return HttpResponse(queryset3,content_type="application/json")
+    return HttpResponse(JSon_Object,content_type="application/json")

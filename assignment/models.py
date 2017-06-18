@@ -16,6 +16,9 @@ class User(models.Model):
     token = models.CharField(max_length=8)
 
     def __str__(self):
+        return str(self.usn)
+
+    def __int__(self):
         return self.username
 
 
@@ -24,26 +27,46 @@ class User_resource(models.Model):
 
     trophy = models.IntegerField()
 
+    def __str__(self):
+        return str(self.usn)
+
     def __int__(self):
-        return self.trophy
+        return self.usn
 
 
 class User_team(models.Model):
     usn = models.ForeignKey('assignment.User', on_delete=models.CASCADE)
 
-    team_id = models.IntegerField()
+    team_id = models.ForeignKey('assignment.Team_List')
+
+    def __str__(self):
+        return str(self.team_id.team_id)
 
     def __int__(self):
-        return self.team_id
+        return self.usn
 
+class Team_list(models.Model):
+    team_id = models.IntegerField(primary_key=True)
+
+    team_name = models.CharField(max_length=20)
+
+    def __str__(self):
+        return str(self.team_id)
+
+# need to check where the hell Team_list is located then fix the bug
 
 class Match_list(models.Model):
-    match_id = models.IntegerField()
+    match_id = models.IntegerField(primary_key=True)
 
-    home_team = models.ForeignKey(User_team,related_name='home')
+    home_team = models.ForeignKey(User_team,
+                                  related_name='home')
 
-    away_team = models.ForeignKey(User_team, related_name='away')
+    away_team = models.ForeignKey(User_team,
+                                  related_name='away')
 
     match_date = models.DateField()
 
     match_time = models.TimeField()
+
+    def __str__(self):
+        return str(self.match_id)
