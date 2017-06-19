@@ -35,7 +35,7 @@ class User_resource(models.Model):
 
 
 class User_team(models.Model):
-    usn = models.ForeignKey('assignment.User', on_delete=models.CASCADE)
+    usn = models.ForeignKey('assignment.User', on_delete=models.CASCADE, db_index=True)
 
     team_id = models.ForeignKey('assignment.Team_List')
 
@@ -58,10 +58,10 @@ class Team_list(models.Model):
 class Match_list(models.Model):
     match_id = models.IntegerField(primary_key=True)
 
-    home_team = models.ForeignKey(User_team,
+    home_team = models.ForeignKey(Team_list,
                                   related_name='home')
 
-    away_team = models.ForeignKey(User_team,
+    away_team = models.ForeignKey(Team_list,
                                   related_name='away')
 
     match_date = models.DateField()
