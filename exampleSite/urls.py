@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from assignment.views import user_profile, match_list
+from assignment.views import user_profile, match_list, user_rank, bet_list, player_list, bet_history
 
 
 # url(r'^user_profile/(?P<usn>\w{0,50})/$', user_profile)
@@ -26,4 +26,8 @@ urlpatterns = [
     url(r'^user_profile/$', user_profile),
     url(r'^user_profile/(?P<usn>\w{0,50})/$', user_profile),
     url(r'^match_list/(?P<usn>\w{0,50})/$', match_list),
+    url(r'^user_rank/(?P<usn>\w{0,50})/$', user_rank),
+    url(r'^bet_list/(?P<usn>\w{0,50})/$', bet_list),
+    url(r'^player_list/(?P<team_id>\w{0,50})/$', player_list),
+    url(r'^bet_history/(?P<usn>\w{0,50})/$', bet_history),
 ]
